@@ -76,19 +76,20 @@ The following resources are created:
 1. In VPC, allocate an Elastic IP.
 1. Edit the Name of the new Elastic IP:
    * Name: `scratch-elastic-ip`
-1. Select the new Elastic IP and Allocate Address:
+1. Select the new Elastic IP and _Allocate_ Assign Address:
    * Type: Network Interface
    * Network Interface: `scratch-network-interface`
    * Private IP: `10.0.0.100`
 1. In EC2, create a new EC2 instance:
    * AMI: Use the default Amazon Linux.
    * Size: Use the default t2.micro.
+   * __Advanced User Data: See below.__
    * Network: `scratch-vpc`
    * Subnet: `scratch-subnet`
    * Network Interface: `scratch-network-interface`
    * Add tag Name: `scratch-instance`
    * Security Group: Existing `scratch-security-group`
-   * Advanced User Data: See below.
+   * _Advanced User Data: See below._
    * Key Pair: Use your own key pair.
 1. Wait for the instance to finish starting and configuring.
 1. Select the `scratch-instance` and copy the Public IP Address.
